@@ -1,78 +1,134 @@
-@use 'sass:map';
-@import 'styles/Pages/theme.scss';
+@use "sass:map";
+@import "styles/Pages/theme.scss";
 
 .container__slider {
-    max-width: 1200px;
+  max-width: 1200px;
+  margin-top: 30px;
+  .categories__slider {
     margin-top: 30px;
-    .categories__slider {
-        margin-top: 30px;
-        .slider__item {
-            height: 300px;
-            position: relative;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: top center;
-            border-radius: 5px;
-            p {
-                position: absolute;
-                left: 5%;
-                bottom: 20px;
-                text-align: center;
-                font-size: 18px;
-                color: map-get($theme-colors, 'normal-text');
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                padding: 12px 0 10px;
-                width: 270px;
-                cursor: pointer;
-                :hover {
-                    background-color: rgb(237 237 237);
-                }
-            }
+    .slider__item {
+      height: 300px;
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top center;
+      border-radius: 5px;
+      p {
+        position: absolute;
+        left: 5%;
+        bottom: 20px;
+        text-align: center;
+        font-size: 18px;
+        color: map-get($theme-colors, "normal-text");
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 12px 0 10px;
+        width: 270px;
+        cursor: pointer;
+        :hover {
+          background-color: rgb(237 237 237);
         }
-        .react-multi-carousel-item:not(:last-child) {
-            margin-right: 10px;
-        }
-        .react-multi-carousel-item:not(:first-child) {
-            margin-left: 10px;
-        }
+      }
     }
+    .react-multi-carousel-item:not(:last-child) {
+      margin-right: 10px;
+    }
+    .react-multi-carousel-item:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
 }
 .featured {
-    margin-top: 30px;
-    .section-title {
-        margin-bottom: 50px;
+  margin-top: 30px;
+  .section-title {
+    margin-bottom: 50px;
+    text-align: center;
+    h2 {
+      position: relative;
+    }
+    h2:after {
+      position: absolute;
+      left: 0;
+      bottom: -15px;
+      right: 0;
+      height: 4px;
+      width: 80px;
+      background-color: map-get($theme-colors, "main");
+      content: "";
+      margin: 0 auto;
+    }
+  }
+  .react-tab {
+    ul {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+    li {
+      list-style: none;
+      font-size: 18px;
+      color: map-get($theme-colors, "normal-text");
+      display: inline-block;
+      margin-right: 25px;
+      position: relative;
+      cursor: pointer;
+    }
+  }
+  .featured__item {
+    margin-bottom: 50px;
+    &:hover {
+      .featured__item__pic__hover {
+        bottom: 5% !important;
+      }
+    }
+    .featured__item__pic {
+      height: 270px;
+      position: relative;
+      overflow: hidden;
+      background-position: center;
+      display: flex;
+      .featured__item__pic__hover {
+        position: absolute;
+        left: 0;
+        bottom: -15%;
+        width: 100%;
         text-align: center;
-        h2 {
-            position: relative;
-        }
-        h2:after {
-            position: absolute;
-            left: 0;
-            bottom: -15px;
-            right: 0;
-            height: 4px;
-            width: 80px;
-            background-color: map-get($theme-colors, 'main');
-            content: '';
-            margin: 0 auto;
-        }
-    }
-    .react-tab {
-        ul {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 50px;
-        }
+        transition: all, 0.5s;
         li {
-            list-style: none;
-            font-size: 18px;
-            color: map-get($theme-colors, 'normal-text');
-            display: inline-block;
-            margin-right: 25px;
-            position: relative;
-            cursor: pointer;
+          font-size: 20px;
+          list-style: none;
+          display: inline-block;
+          &:hover {
+            svg {
+              background-color: map-get($theme-colors, "main");
+              border: #7fad39;
+              color: #ffffff;
+              transform: rotate(360deg);
+              transition: all, 0.5s;
+              
+            }
+          }
+          svg {
+            padding: 5px;
+            height: 30px;
+            width: 30px;
+            // border: 1px solid #5f5b5b;
+            background-color: #f5eded;
+            color: #565555;
+            transform: all,0.3s;
+            border-radius: 50%;
+          }
         }
+      }
     }
+    ul {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      padding-left: 38%;
+
+      column-gap: 20px;
+    }
+  }
 }
