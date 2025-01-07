@@ -31,11 +31,48 @@
                 }
             }
         }
-        .react-multi-carousel-item:not(:last-child){
+        .react-multi-carousel-item:not(:last-child) {
             margin-right: 10px;
         }
-        .react-multi-carousel-item:not(:first-child){
+        .react-multi-carousel-item:not(:first-child) {
             margin-left: 10px;
+        }
+    }
+}
+.featured {
+    margin-top: 30px;
+    .section-title {
+        margin-bottom: 50px;
+        text-align: center;
+        h2 {
+            position: relative;
+        }
+        h2:after {
+            position: absolute;
+            left: 0;
+            bottom: -15px;
+            right: 0;
+            height: 4px;
+            width: 80px;
+            background-color: map-get($theme-colors, 'main');
+            content: '';
+            margin: 0 auto;
+        }
+    }
+    .react-tab {
+        ul {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        li {
+            list-style: none;
+            font-size: 18px;
+            color: map-get($theme-colors, 'normal-text');
+            display: inline-block;
+            margin-right: 25px;
+            position: relative;
+            cursor: pointer;
         }
     }
 }

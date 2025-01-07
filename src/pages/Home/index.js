@@ -2,6 +2,8 @@ import './style.scss';
 import image from 'assets/users/images/image.jpeg';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 function Home() {
     const responsive = {
         superLargeDesktop: {
@@ -28,6 +30,43 @@ function Home() {
         { bgImg: image, name: 'Sua hop' },
         { bgImg: image, name: 'Thit bo' },
     ];
+    const featProducts = {
+        all: {
+            title: 'Toan bo',
+            product: [
+                { img: image, name: 'Thit bo nat', price: '20000' },
+                { img: image, name: 'Chuoi', price: '20000' },
+            ],
+        },
+        freshMeat: {
+            title: 'Thit tuoi',
+            product: [{ img: image, name: 'Thit bo nat', price: '20000' }],
+        },
+    };
+    function renderFeaturedProducts(data) {
+        const Tablist = [];
+        const Tabpanels = [];
+        Object.keys(data).forEach((key, index) => {
+            Tablist.push(<Tab key={index}>{data[key].title}</Tab>);
+            const Tabpanel = [];
+            data[key].product.forEach((item, j) => {
+                Tabpanel.push(<div key={j}>{item.name} </div>);
+            });
+            Tabpanels.push(Tabpanel);
+        });
+
+        return (
+            <Tabs>
+                <TabList>{Tablist}</TabList>
+                {Tabpanels.map((item, k) => (
+                    <TabPanel key={k}>
+                        <div className="row">{item}</div>
+                    </TabPanel>
+                ))}
+            </Tabs>
+        );
+    }
+
     return (
         <>
             <div className=" container grid wide container__slider">
@@ -38,6 +77,14 @@ function Home() {
                         </div>
                     ))}
                 </Carousel>
+            </div>
+            <div className="container grid wide ">
+                <div className="featured">
+                    <div className="section-title">
+                        <h2>San pham noi bat</h2>
+                    </div>
+                    {renderFeaturedProducts(featProducts)}
+                </div>
             </div>
         </>
     );
