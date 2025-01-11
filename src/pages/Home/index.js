@@ -40,11 +40,31 @@ function Home() {
         { img: image, name: "Chuoi", price: "20000" },
         { img: image, name: "Ga", price: "20000" },
         { img: image, name: "Con cac", price: "20000" },
+        { img: image, name: "Con cac", price: "20000" },
+        { img: image, name: "Con cac", price: "20000" },
+        { img: image, name: "Con cac", price: "20000" },
+        { img: image, name: "Con cac", price: "20000" }
       ],
     },
     freshMeat: {
       title: "Thit tuoi",
       product: [{ img: image, name: "Thit bo nat", price: "20000" }],
+    },
+    Juice: {
+      title: "Nuoc trai cay",
+      product: [{ img: image, name: "CUT", price: "20000" }],
+    },
+    Vegetables: {
+      title: "Rau cu",
+      product: [{ img: image, name: "CUT", price: "20000" }],
+    },
+    Fruit: {
+      title: "Trai cay",
+      product: [{ img: image, name: "CUT", price: "20000" }],
+    },
+    Seafood: {
+      title: "Hai san",
+      product: [{ img: image, name: "CUT", price: "20000" }],
     },
   };
   function renderFeaturedProducts(data) {
@@ -55,7 +75,7 @@ function Home() {
       const Tabpanel = [];
       data[key].product.forEach((item, j) => {
         Tabpanel.push(
-          <div className="col l-3" key={j}>
+          <div className="col l-3 m-4 c-6" key={j}>
             <div className="featured__item">
               <div
                 className="featured__item__pic"
@@ -84,10 +104,10 @@ function Home() {
     });
     return (
       <Tabs>
-        <TabList>{Tablist}</TabList>
+        <TabList classID="col m-3">{Tablist}</TabList>
         {Tabpanels.map((item, k) => (
-          <TabPanel key={k}>
-            <div className="row ">{item}</div>
+          <TabPanel key={k} >
+            <div className="row">{item}</div>
           </TabPanel>
         ))}
       </Tabs>

@@ -106,7 +106,6 @@
               color: #ffffff;
               transform: rotate(360deg);
               transition: all, 0.5s;
-              
             }
           }
           svg {
@@ -116,7 +115,7 @@
             // border: 1px solid #5f5b5b;
             background-color: #f5eded;
             color: #565555;
-            transform: all,0.3s;
+            transform: all, 0.3s;
             border-radius: 50%;
           }
         }
@@ -127,8 +126,25 @@
       align-items: center;
       flex-direction: row;
       padding-left: 38%;
-
       column-gap: 20px;
+      
+    }
+    .featured__item__text {
+      font-size: 18px;
+      text-align: center;
+      h6 {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-weight: 400;
+        a {
+          text-decoration: none;
+          color: map-get($theme-colors, "normal-text");
+        }
+      }
+      h5 {
+        color: map-get($theme-colors, "normal-text");
+        font-weight: 600;
+      }
     }
   }
 }
